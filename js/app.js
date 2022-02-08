@@ -81,7 +81,7 @@ search.addEventListener("input",function(){
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function(element){
     let cardTxt = element.getElementsByTagName("p")[0].innerText;
-        if(cardText.includes(inputVal)){
+        if(cardTxt.includes(inputVal)){
         element.style.display = "block";
            
         }
