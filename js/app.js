@@ -59,7 +59,7 @@ function showNotes() {
 }
 
 function deleteNote(index) {
-    console.log('will delete this index',index);
+   // console.log('will delete this index',index);
     let notes = localStorage.getItem("notes");
 
     if (notes == null) {
@@ -74,3 +74,20 @@ function deleteNote(index) {
     showNotes();
 
 }
+
+let search =document.getElementById('searchTxt');
+search.addEventListener("input",function(){
+    let inputVal = search.value.toLowerCase();
+    let noteCards = document.getElementByClassName('noteCard');
+    Array.from(noteCards).forEach(function(element){
+    let cardTxt = element.getElementByTagName("p")[0].innerText;
+        if(cardText.includes(inputVal)){
+        element.style.display = "block";
+           
+        }
+        else{
+        element.style.display = "none";
+        }
+    })
+
+})
